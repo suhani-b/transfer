@@ -106,7 +106,7 @@ test_interaction.poisson.single <- function(dat, obs,
     # print(mm)
     # print("fitting glm")
 
-    fit.gp <- glm_gp(dat_f.T,
+    fit.gp <- glm_gp(t(dat_f),
         design = as.formula(model_formula), col_data = meta,
         # size_factors = 'deconvolution',
         size_factors = "normed_sum",
