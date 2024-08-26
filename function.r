@@ -97,14 +97,12 @@ test_interaction.poisson.single <- function(dat, obs,
     }
    
     col_data <- meta
-    print(101)
     mf <- model.frame(as.formula(model_formula), data = col_data, drop.unused.levels = TRUE)
-    print(mf)
     terms <- attr(mf, "terms")
-    print(terms)
     attr(terms, "xlevels") <- stats::.getXlevels(terms, mf)
-    print(terms)
     mm <- stats::model.matrix.default(terms, mf)
+    print(dim(mm))
+    print(dim(dat_f))
     print(mm)
     print("fitting glm")
 
