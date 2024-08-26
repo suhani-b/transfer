@@ -95,11 +95,13 @@ test_interaction.poisson.single <- function(dat, obs,
     if (!(is.null(additional_covariates))) {
         model_formula <- paste(model_formula, paste(additional_covariates, collapse = " + "), sep = " + ")
     }
-    print(typeof(as.formula(model_formula)))
-    print(dim(as.formula(model_formula)))
-    print(typeof(meta))
-    print(dim(meta))
-    print(model_formula)
+   
+    col_data <- meta
+    mf <- model.frame(formula, data = col_data, drop.unused.levels = TRUE)
+    terms <- attr(mf, "terms")
+    attr(terms, "xlevels") <- stats::.getXlevels(terms, mf)
+    mm <- stats::model.matrix.default(terms, mf)
+    print(mm)
     print("fitting glm")
 
     fit.gp <- glm_gp(dat_f,
