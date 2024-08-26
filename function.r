@@ -98,7 +98,7 @@ test_interaction.poisson.single <- function(dat, obs,
    
     col_data <- meta
     print(101)
-    mf <- model.frame(formula, data = col_data, drop.unused.levels = TRUE)
+    mf <- model.frame(as.formula(model_formula), data = col_data, drop.unused.levels = TRUE)
     print(mf)
     terms <- attr(mf, "terms")
     print(terms)
