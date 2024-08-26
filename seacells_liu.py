@@ -125,7 +125,7 @@ if __name__ == '__main__':
             # raw_ad.obs_names, raw_ad.var_names = ad_subset.obs_names, ad_subset.var_names
             # ad_subset.raw = raw_ad
             # del raw_ad
-            ad_subset.X = ad_subset.layers['counts'].copy()
+            # ad_subset.X = ad_subset.layers['counts'].copy()
 
             # Normalize cells, log transform, compute highly variable genes
             sc.pp.normalize_total(ad_subset)
