@@ -15,6 +15,14 @@
 #' @param control_other_factors character vector; all factors to control for in regression
 #'
 #' @return list of glm fit and DE results for each term in the model
+require(dplyr)
+require(readr)
+require(ggplot2)
+require(data.table)
+require(ggthemes)
+require(ComplexHeatmap)
+require(limma)
+require(glmGamPoi)
 
 test_interaction.poisson.single <- function(dat, obs,
                                             cell_scores,
