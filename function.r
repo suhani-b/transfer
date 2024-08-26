@@ -95,8 +95,8 @@ test_interaction.poisson.single <- function(dat, obs,
     if (!(is.null(additional_covariates))) {
         model_formula <- paste(model_formula, paste(additional_covariates, collapse = " + "), sep = " + ")
     }
-    
-    print(dim(model_formula))
+    print(typeof(as.formula(model_formula)))
+    print(dim(as.formula(model_formula)))
     print(typeof(meta))
     print(dim(meta))
     print(model_formula)
