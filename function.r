@@ -63,6 +63,8 @@ test_interaction.poisson.single <- function(dat, obs,
     # dat_f = cbind(dat_f, cell_scores[rownames(dat_f),], list(GDR = gdr), adata$obs[rownames(dat_f),])
     # create metadata df
     meta <- cbind(cell_scores[rownames(dat_f), ], list(GDR = gdr), obs[rownames(dat_f), ])
+    print(meta)
+    print(rownames(dat_f))
 
     # loop through each column of factor matrix and compute interaction score
     res_i <- list()
