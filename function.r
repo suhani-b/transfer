@@ -96,17 +96,17 @@ test_interaction.poisson.single <- function(dat, obs,
         model_formula <- paste(model_formula, paste(additional_covariates, collapse = " + "), sep = " + ")
     }
    
-    col_data <- meta
-    mf <- model.frame(as.formula(model_formula), data = col_data, drop.unused.levels = TRUE)
-    terms <- attr(mf, "terms")
-    attr(terms, "xlevels") <- stats::.getXlevels(terms, mf)
-    mm <- stats::model.matrix.default(terms, mf)
-    print(dim(mm))
-    print(dim(dat_f))
-    print(mm)
-    print("fitting glm")
+    # col_data <- meta
+    # mf <- model.frame(as.formula(model_formula), data = col_data, drop.unused.levels = TRUE)
+    # terms <- attr(mf, "terms")
+    # attr(terms, "xlevels") <- stats::.getXlevels(terms, mf)
+    # mm <- stats::model.matrix.default(terms, mf)
+    # print(dim(mm))
+    # print(dim(dat_f))
+    # print(mm)
+    # print("fitting glm")
 
-    fit.gp <- glm_gp(dat_f,
+    fit.gp <- glm_gp(dat_f.T,
         design = as.formula(model_formula), col_data = meta,
         # size_factors = 'deconvolution',
         size_factors = "normed_sum",
